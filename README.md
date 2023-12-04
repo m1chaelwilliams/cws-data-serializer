@@ -16,4 +16,4 @@ I hope to add more flexible array logic in the future. I want to add support for
 
 The parser uses a custom language similar to `YAML`. Nodes are defined by a key and value, the key being on the left of the colon and value (optional) being on the right. In order to nest a node as a child of a parent, indent it with <tab> one more than the target parent. Duplicate, unecessary tabs **will** cause undesired behavior.
 
-Please reference the (example)[./example/] program.
+Please reference the [Example](example/) program.
