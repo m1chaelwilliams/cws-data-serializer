@@ -33,10 +33,17 @@ int main(int argc, char* argv[]) {
 		root["player"].create_node(argv[1], argv[2]);
 	}
 
-	std::cout << "2nd element in array: " << root["player"]["list"][1].as_string() << std::endl;
+	// print 2nd element in array
+	std::cout << "2nd element in list: " << root["player"]["list"][1].as_string() << std::endl;
 
+	// prepending nodes
 	for (int i = 0; i < 10; i++) {
-		root["player"]["list"].create_node(std::to_string(i));
+		root["player"]["list"].prepend_node("inserted before");
+	}
+
+	// append 10 elements to list
+	for (int i = 0; i < 10; i++) {
+		root["player"]["list"].append_node(std::to_string(i));
 	}
 
 	// rewrite to original file

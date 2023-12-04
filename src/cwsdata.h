@@ -3,11 +3,11 @@
 @brief simple data parsing tool for data serialization.
 */
 
-#ifndef NODETXT_H
-#define NODETXT_H
+#ifndef CWSDATA_H
+#define CWSDATA_H
 
 #include <iostream>
-#include <vector>
+#include <deque>
 #include <fstream>
 #include <stack>
 #include <memory>
@@ -67,15 +67,19 @@ namespace cwsdata {
                 children.push_back(std::make_unique<Node>(name, value, depth+1));
             }
 
-            void create_node(const std::string& value) {
+            void append_node(const std::string& value) {
                 children.push_back(std::make_unique<Node>(std::to_string(children.size()), value, depth+1));
+            }
+
+            void prepend_node(const std::string& value) {
+                children.push_front(std::make_unique<Node>("0", value, depth+1));
             }
 
             std::string name;
             std::string value;
             bool list;
             int depth;
-            std::vector<std::unique_ptr<Node>> children;
+            std::deque<std::unique_ptr<Node>> children;
 
             Node& operator[](const std::string& child_name) {
                 auto& childNode = get_child(child_name);
