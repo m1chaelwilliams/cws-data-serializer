@@ -1,0 +1,21 @@
+# Example .cwsdata file
+# These comments will disappear after running the program :sad:
+
+player: 
+	name: Michael
+	health: 10
+	weapon: sword
+	list: 
+		1: 1 # example of a list item (hopefully temporary)
+		2: 2
+		3: 3
+		3: 0
+		4: 1
+		5: 2
+		6: 3
+		7: 4
+		8: 5
+		9: 6
+		10: 7
+		11: 8
+		12: 9
